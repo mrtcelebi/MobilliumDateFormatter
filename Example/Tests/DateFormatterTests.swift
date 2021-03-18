@@ -1,21 +1,15 @@
+//
+//  DateFormatterTests.swift
+//  MobilliumDateFormatter_Tests
+//
+//  Created by Mehmet Salih Aslan on 17.03.2021.
+//  Copyright © 2021 CocoaPods. All rights reserved.
+//
+
 import XCTest
-import MobilliumDateFormatter
+@testable import MobilliumDateFormatter
 
-extension Date.Format {
-    static let dateTime = Date.Format.custom(rawValue: "yyyy-MM-dd HH:mm:ss")
-}
-
-class Tests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+class DateFormatterTests: XCTestCase {
     
     func testStringToDate() {
         // Value
@@ -45,9 +39,11 @@ class Tests: XCTestCase {
         
         // Create a Date
         let date = Date.from(timeInterval)
+        let dateString = date?.to(.dateTime)
         
         // Check
         XCTAssertNotNil(date)
+        XCTAssertNotNil(dateString)
     }
     
 }
